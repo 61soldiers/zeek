@@ -14,7 +14,7 @@
 *Tested only on windows | aimed at cross-platform compatibility*<br/>
 [Click to download windows installer](https://github.com/61soldiers/zeek/releases/download/0.1.0/Zeek.Setup.0.1.0.exe)
 
-**Note** 
+**Note** <br/>
 Downloading a track solely depends on whether said track is hosted on youtube or not. 99% of the times the right track will be downloaded.
 Adding spotify playlists will only extract the first 100 songs. You will have to add the rest of the playlist manually using `Add track`
 
