@@ -1,6 +1,8 @@
 <p align="center">
-  <span style="font-size:60px;">ZEEK</span><br/>
-  <span>Chill music player heavily centering around spotify.</span><br/>
+  <img src="https://cdn.discordapp.com/attachments/680880287864848428/897886404019908618/ZEEK.png">
+</p>
+<p align="center">
+  <span>Chill music player heavily centering around spotify</span><br/>
   <span>Listen to your playlists offline and without ads</span>
   </p>
   <br/><br/><br/>
@@ -9,7 +11,7 @@
 <br/><br/><br/><br/>
 
 ## Installation
-*Tested only on windows | aimed at cross-platform compatibility*
+*Tested only on windows | aimed at cross-platform compatibility*<br/>
 Windows installer -> 
 
 **Note** 
