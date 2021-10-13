@@ -1,0 +1,131 @@
+{
+  "name": "zeek",
+  "version": "0.1.0",
+  "author": {
+    "name": "61soldiers",
+    "url": "https://github.com/61soldiers"
+  },
+  "description": "Music player heavily centering around spotify",
+  "main": "./build/electron/main.js",
+  "scripts": {
+    "dev": "npm run clean:db && rimraf build && concurrently \"npm:start:renderer\" \"npm:build:main\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .\"",
+    "start:renderer": "cross-env BROWSER=none react-app-rewired start",
+    "fix:electron": "npx electron-fix start",
+    "build": "react-app-rewired build",
+    "build:main": "tsc --project tsconfig.main.json",
+    "clean": "npm run clean:prev-build && npm run clean:db",
+    "clean:prev-build": "rimraf dist",
+    "clean:db": "node reset-db.js",
+    "package:win": "npm run clean && npm run build && npm run build:main && electron-builder -w -c.extraMetadata.main=build/electron/main.js",
+    "package:mac": "npm run clean && npm run build && npm run build:main && electron-builder -m -c.extraMetadata.main=build/electron/main.js",
+    "package:linux": "npm run clean && npm run build && npm run build:main && electron-builder -l -c.extraMetadata.main=build/electron/main.js"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@epydoc/react-contextmenu": "^2.15.1",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.23.0",
+    "chokidar": "^3.5.2",
+    "command-exists": "^1.2.9",
+    "dir-exists-safe": "^1.1.0",
+    "discord-rpc": "^4.0.1",
+    "electron-is-dev": "^2.0.0",
+    "electron-store": "^8.0.1",
+    "file-exists": "^5.0.1",
+    "forerunnerdb": "^2.0.22",
+    "fuse.js": "^6.4.6",
+    "got": "^11.8.2",
+    "notistack": "^2.0.2",
+    "pretty-ms": "^7.0.1",
+    "progress-stream": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-jinke-music-player": "^4.24.2",
+    "react-router-dom": "^5.3.0",
+    "react-tooltip": "^4.2.21",
+    "spotify-url-info": "^2.2.3",
+    "string-sanitizer": "^2.0.2",
+    "unzipper": "^0.10.11",
+    "uuid": "^8.3.2",
+    "youtube-dl-exec": "^1.3.2",
+    "ytsr": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/command-exists": "^1.2.0",
+    "@types/discord-rpc": "^4.0.0",
+    "@types/file-exists": "^5.0.0",
+    "@types/node": "^16.10.3",
+    "@types/progress-stream": "^2.0.2",
+    "@types/react": "^17.0.27",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.1",
+    "@types/unzipper": "^0.10.4",
+    "@types/uuid": "^8.3.1",
+    "concurrently": "^6.3.0",
+    "cross-env": "^7.0.3",
+    "customize-cra": "^1.0.0",
+    "electron": "^15.1.2",
+    "electron-builder": "^22.11.7",
+    "electron-fix": "^1.1.3",
+    "react-app-rewired": "^2.1.8",
+    "react-scripts": "^4.0.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.3",
+    "wait-on": "^6.0.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": ".",
+  "engines": {
+    "node": ">=14"
+  },
+  "build": {
+    "appId": "com.evolvedmesh.zeek",
+    "productName": "Zeek",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "extraFiles": [
+      "data/*.fdb"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "./src/Resources/images/zeek_icon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "./src/Resources/images/zeek_icon.icns"
+    },
+    "mac": {
+      "target": "default",
+      "icon": "./src/Resources/images/zeek_icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "createDesktopShortcut": true,
+      "installerIcon": "./src/Resources/images/zeek_icon.ico",
+      "uninstallerIcon": "./src/Resources/images/zeek_icon.ico",
+      "perMachine": false,
+      "shortcutName": "Zeek"
+    }
+  }
+}
