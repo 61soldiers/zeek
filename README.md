@@ -24,7 +24,7 @@ Adding spotify playlists will only extract the first 100 songs. You will have to
 ## Developer mode
 
 ```bash
-git clone https://github.com/61soldiers/zeek .
+git clone https://github.com/61soldiers/zeek.git .
 npm install
 ```
 
