@@ -2,8 +2,8 @@
   <img src="https://cdn.discordapp.com/attachments/680880287864848428/897886404019908618/ZEEK.png">
 </p>
 <p align="center">
-  <span>Chill music player heavily centering around spotify</span><br/>
-  <span>Listen to your playlists offline and without ads</span>
+  <span><i>Chill music player heavily centering around spotify</i></span><br/>
+  <span><i>Listen to your playlists offline and without ads</i></span>
   </p>
   <br/><br/><br/>
   <br/>
@@ -11,12 +11,17 @@
 <br/><br/><br/><br/>
 
 ## Installation
+
+**Pre-requisites** <br/>
+On windows you will need -> [Microsoft Visual C++ 2010 Redistributable Package (x86)](https://www.microsoft.com/en-us/download/details.aspx?id=26999) <br/>
+Rest of the pre-requisites will be automatically downloaded upon app launch
+
 *Tested only on windows | aimed at cross-platform compatibility*<br/>
 [Click to download windows installer](https://github.com/61soldiers/zeek/releases/download/0.1.0/Zeek.Setup.0.1.0.exe)
 
-**Note** <br/>
+## Note
 Downloading a track solely depends on whether said track is hosted on youtube or not. 99% of the times the right track will be downloaded.
-Adding spotify playlists will only extract the first 100 songs. You will have to add the rest of the playlist manually using `Add track`
+<br/>Adding spotify playlists will only extract the first 100 tracks. You will have to add the rest of the playlist manually using `Add track`
 
 ## Screenshot
 <img src="https://cdn.discordapp.com/attachments/680880287864848428/897880296475734026/unknown.png">

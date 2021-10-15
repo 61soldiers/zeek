@@ -33,9 +33,6 @@ const store = new electronStore()
 
 function createWindow(): void {
   
-  if (isDev) {
-    store.set("firstLaunch", false)
-  }
   // restore window size state
   let sizeState = store.get("bounds") as any
 
